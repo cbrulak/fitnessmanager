@@ -12,6 +12,8 @@ end
 
 group :production do
   gem 'pg'
+  gem 'unicorn'
+  gem 'newrelic_rpm'
 end
 
 
@@ -26,6 +28,8 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'compass-rails'
   gem 'zurb-foundation'
 end
 
@@ -41,7 +45,7 @@ gem 'mime_version'
 # gem 'jbuilder'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
