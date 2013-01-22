@@ -23,14 +23,6 @@
     <%= f.label :numSets %><br />
     <%= f.number_field :numSets %>
   </div>
-  <div class="field">
-    <%= f.label :weight %><br />
-    <%= f.number_field :weight %>
-  </div>
-  <div class="field">
-    <label for="workout_set_weightunit">Unit</label><br/>
-    <%= f.select :weightunit, options_for_select(WorkoutSet::WEIGHTUNITS  )  %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

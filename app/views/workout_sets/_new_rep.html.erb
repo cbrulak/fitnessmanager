@@ -1,0 +1,35 @@
+
+<%= form_for(@weight_rep,:remote => true) do |f| %>
+  <% if @weight_rep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@weight_rep.errors.count, "error") %> prohibited this workout_set from being saved:</h2>
+
+      <ul>
+      <% @weight_rep.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :workoutset_id, :value => @workout_set.id %>
+  <div class="field">
+    <%= f.label :reps %>
+    <%= f.number_field :reps %>
+  </div>
+  <div class="field">
+    <%= f.label :numSets %>
+    <%= f.number_field :numSets %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <label for="workout_set_weightunit">Unit</label><br/>
+    <%= f.select :weightUnit, options_for_select(WorkoutSet::WEIGHTUNITS  )  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

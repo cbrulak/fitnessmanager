@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 
 group :development do
   gem 'sqlite3'
+  gem 'quiet_assets', :group => :development
 end
 
 group :production do

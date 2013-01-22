@@ -14,6 +14,11 @@ class WorkoutSetsController < ApplicationController
   # GET /workout_sets/1.json
   def show
     @workout_set = WorkoutSet.find(params[:id])
+    @weight_rep = WeightRep.new
+    @weight_rep.reps = @workout_set.reps
+    @weight_rep.numSets = @workout_set.numSets
+
+    @weight_reps = WeightRep.find_all_by_workoutset_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
