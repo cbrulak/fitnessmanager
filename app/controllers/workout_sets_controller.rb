@@ -2,7 +2,7 @@ class WorkoutSetsController < ApplicationController
   # GET /workout_sets
   # GET /workout_sets.json
   def index
-    @workout_sets = WorkoutSet.all
+    @workout_sets = WorkoutSet.find_all_by_user_id(current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +41,7 @@ class WorkoutSetsController < ApplicationController
   # POST /workout_sets.json
   def create
     @workout_set = WorkoutSet.new(params[:workout_set])
+    @workout_set.user_id = current_user.id
 
     respond_to do |format|
       if @workout_set.save
