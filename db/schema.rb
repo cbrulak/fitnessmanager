@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121024341) do
+ActiveRecord::Schema.define(:version => 20130122161625) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20130121024341) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
+    t.integer  "weight"
+    t.string   "weightunit"
   end
 
 end
