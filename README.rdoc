@@ -5,15 +5,11 @@ A very simple app to track your work out routine, without having to subscribe to
 ==Deploying
 I use heroku and New Relic to keep loaded and fairly responsive. So if you want to deploy it to your own instance and you want to use new relic:
 
-```ruby
 heroku config:set NEW_RELIC=YOUR_KEY
-```
 
 And you will need to add your email to the seeds file. The run:
 
-```
 heroku run rake db:seed
-```
 
 ==Contributing
 
